@@ -1,0 +1,36 @@
+.toast-item {
+  width: 25%;
+  height: 52px;
+  margin: .7rem 0;
+  background: #99bfafbf;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
+  color: white;
+  padding: 1rem 2rem;
+  cursor: pointer;
+  animation: fadeIn ease 1s;
+  transition: .3s ease-in;
+}
+
+.btn {
+  background: none;
+  float: right;
+  color: white;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.toast-item:hover {
+  background: #99bfaf;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}

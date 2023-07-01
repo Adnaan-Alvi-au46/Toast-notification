@@ -1,72 +1,21 @@
 // import axios from 'axios'
 // import React, { useEffect, useState } from 'react'
 import classes from "./ThirdComponent.module.css";
-// // import Button from '../UI/Button'
-
-// const ThirdComponent = () => {
-//     const [data,setData]=useState([])
-//     // const [page,setPage]=useState(1)
-//     const getData=async()=>{
-//       try {
-//         const res=await axios.get("https://fakestoreapi.com/products",{
-//             // params:{
-//             //     _page:page,
-//             //     _limit:limit
-//             // }
-//         });
-//         setData(res.data)
-//         console.log(res.data);
-//       } catch (error) {
-//         console.log(error)
-//       }
-//     }
-//     // useEffect(()=>{
-//     //     getData({page,limit:5})
-//     // },[page])
-//     useEffect(()=>{
-//         getData()
-//     },[])
-
-//     return (
-//     <>
-//     {/* <Button /> */}
-//     <div className={classes.parent}>
-//         {
-//             data.map((item)=>{
-//                 return <div key={item.id} className={classes.child}>
-//                     <img src={item.image} alt={item.image} width={"130px"}/>
-//                     <p>{item.category}</p>
-//                     <p>{item.decription}</p>
-//                     <p>Price {item.price}</p>
-//                 </div>
-//             })
-//         }
-//     </div>
-//     {/* <div className={classes.buttonDiv}>
-//         <button disabled={page===1} onClick={()=>setPage(page-1)}>Prev</button>
-//         <button disabled={page===1}>{page}</button>
-//         <button onClick={()=>setPage(page+1)}>Next</button>
-//     </div> */}
-//     </>
-//   )
-// }
-
-// export default ThirdComponent
-
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 
 function ThirdComponent() {
   const [products, setProducts] = useState([]);
+  const [show,setShow]=useState(false)
   const [currentPage, setCurrentPage] = useState(1);
   const [loading, setLoading] = useState(false);
   const productsPerPage = 5;
 
-  useEffect(() => {
-    fetchProducts();
-  }, []);
-
+  // useEffect(() => {
+  //   fetchProducts();
+  // }, []);
   const fetchProducts = async () => {
+    setShow(!show)
     try {
       setLoading(true)
       const response = await axios.get("https://fakestoreapi.com/products");
@@ -77,7 +26,8 @@ function ThirdComponent() {
       console.error(error);
     }
   };
-
+ 
+  
   const indexOfLastProduct = currentPage * productsPerPage; 
   const indexOfFirstProduct = indexOfLastProduct - productsPerPage; 
   const currentProducts = products.slice(
@@ -101,6 +51,7 @@ function ThirdComponent() {
 
   return (
     <>
+     <button className={classes.buttons} onClick={fetchProducts}  >Fetch</button>
       <div className={classes.parent}>
         {currentProducts.map((item) => {
           return (
@@ -114,7 +65,7 @@ function ThirdComponent() {
         })}
       </div>
 
-      <div className={classes.buttonp}>
+     {show && <div className={classes.buttonp}>
         <div className={classes.btns}>
           <button
             className={classes.buttons}
@@ -131,7 +82,7 @@ function ThirdComponent() {
             Next
           </button>
         </div>
-      </div>
+      </div>}
     </>
   );
 }

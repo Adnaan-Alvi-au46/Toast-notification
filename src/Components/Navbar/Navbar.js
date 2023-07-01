@@ -1,8 +1,10 @@
+import { useNavigate } from 'react-router-dom'
 import classes from './Navbar.module.css'
 
 
+
 const Navbar = () => {
-  
+  const navigate = useNavigate()
 
   return (
     <div className={classes.navbar}>
@@ -10,9 +12,11 @@ const Navbar = () => {
             <span className={classes.logo}>Header</span>
             <div className={classes.navItems}>
                 <button className={classes.navButton}  onClick={()=>{
-                window.location.replace('/')}}>FirstComponent</button>
+                navigate('/')}}>FirstComponent</button>
                 <button className={classes.navButton} onClick={()=>{
-                window.location.replace('/second')}} >SecondComponent</button>
+                navigate('/second')}} >SecondComponent</button>
+                <button className={classes.navButton} onClick={()=>{
+                navigate('/third')}} >ThirdComponent</button>
             </div>
         </div>
     </div>

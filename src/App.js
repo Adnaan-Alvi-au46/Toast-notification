@@ -1,6 +1,7 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import First from "./Pages/First";
 import Second from "./Pages/Second";
+import Third from "./Pages/Third"
 
 const App = () => {
   return (
@@ -8,6 +9,7 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Second />} />
         <Route path="/second" element={<First />} />
+        <Route path="/third" element={<Third />} />
       </Routes>
     </BrowserRouter>
   );

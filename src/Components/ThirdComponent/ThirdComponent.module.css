@@ -1,0 +1,59 @@
+.parent{
+    display: grid;
+    grid-template-columns: repeat(5,1fr);
+    gap: 40px;
+    width: 80%;
+    margin:2% auto;
+}
+
+.child{
+    border: 1px solid black;
+    padding: 3px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: 1s ease all;
+}
+
+.child:hover{
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+.buttonDiv{
+    display: block;
+    margin:3% auto;
+}
+
+button{
+    padding: 5px 15px;
+
+}
+
+.buttonp{
+    display: block;
+    margin: auto;
+}
+
+.buttons{
+    display: block;
+    margin: auto;
+}
+
+.btns{
+    display: flex;
+}
+
+button{
+    padding: 6px 15px;
+    background-color: rgb(0, 76, 255);
+    border: none;
+    border-radius: 10px;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+    font-weight: 600;
+
+}

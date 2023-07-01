@@ -25,5 +25,5 @@ const ToastInput = (props) => {
       </div>
     </form>
   );
-};
+};  
 export default ToastInput;

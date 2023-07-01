@@ -58,10 +58,11 @@ function First() {
   //   content = <GoalList items={goals} onDeleteItem={deleteItemHandler} />;
   // }
   //   console.log(formIsValid);
-  
+
   return (
-    <div className={classes.container}>
+    <div >
       <Navbar />
+      <div className={classes.container}>
       <div className={classes["sec-container"]}>
         <section id={classes["goal-form"]}>
           <ToastInput onAddGoal={addGoalHandler} />
@@ -74,6 +75,7 @@ function First() {
           />
           {/* {content} */}
         </section>
+      </div>
       </div>
       <Footer />
     </div>

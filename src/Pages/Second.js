@@ -8,7 +8,9 @@ const Second = () => {
   return (
     <div className={classes.container}>
       <Navbar />
-      <Firstcomponent />
+      <div>
+        <Firstcomponent />
+      </div>
       <Footer />
     </div>
   );

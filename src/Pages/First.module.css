@@ -1,9 +1,9 @@
 .container {
-    height: 100vh;
+    /* height: 100vh; */
+    height: 776px;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    position: relative;
+    justify-content: center;
 }
 
 #goals {
@@ -11,7 +11,7 @@
     width: 100%;
     /* max-width: 90%; */
     margin: 3rem auto;
-    position: absolute;
+    /* position: absolute; */
 }
 
 #goal-form {
@@ -26,6 +26,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: auto;
+    /* height: 100vh; */
+    /* position: relative; */
 
 }
